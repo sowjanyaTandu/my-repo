@@ -1,0 +1,74 @@
+Git is used to track the files.
+It will maintain multiple versions of the same file.
+It is platform-independent.
+It is free and open-source.
+They can handle larger projects efficiently.
+They save time and developers can fetch and create pull requests without switching.
+
+
+GIT tracks changes you made, so you have a record of what has been done, and you can revert to specific versions. it makes collaboration easy, 
+allowing changes by multiple people to all merged into one source.
+
+
+
+WORKING DIRECTORY: 
+
+In this stage git is only aware of having files in the project.
+It will not track these files until we commit those files.
+
+STAGING AREA: 
+
+The staging area is like a rough draft space, it's where you can git add the version of a file or multiple files that you want to save in your next commit.
+In other words, in the next version of your project.
+
+REPOSITORY: 
+
+Repository in Git is considered as your project folder.
+A repository has all the project-related data. 
+It contains the collection of the files and also history of changes made to those files.
+
+LOCAL REPO: 
+
+The Local Repository is everything in your .git directory. Mainly what you will see in your Local Repository are all of your checkpoints or commits. It is the area that saves everything (so don’t delete it).
+
+REMOTE REPO:
+
+The remote repository is a Git repository that is stored on some remote computer.
+
+CENTRAL REPO:
+=====================================================================================================================================================================
+This will be present in our GITHUB
+
+INSTALL GIT: yum install git -y
+
+Create a file                             :           touch filename
+Now add that file                         :           git add . (Dot represents current directory)
+commit the file with message      		:           git commit -m "commit message you want"  filename
+To see details of that file               :           git log
+To untrack                                :           git rm --cached filename
+To show commit file                       :           git show commit id file_name
+To see only commit id's and msgs          :           git log --oneline
+To see last 2 commits                     :           git log -2 
+To see all commits for a single file      :          git log --follow --all filename
+====================================================================================================================================================================
+GIT ADD: 
+Git add command is a straightforward command. It adds files to the staging area. 
+We can add single or multiple files at once in the staging area.
+Every time we add or update any file in our project, it is required to forward updates to the staging area. 
+The staging and committing are co-related to each other.
+
+GIT COMMIT:
+It is used to record the changes in the repository. 
+It is the next command after the git add. 
+Every commit contains the index data and the commit message.
+
+GIT STATUS
+The git status command is used to display the state of the repository and staging area. 
+It allows us to see the tracked, untracked files and changes. 
+This command will not show any commit records or information.
+=======================================================================================================================================
+GIT CONFIG:
+git config user.name "username"
+git config user.email "userxyz@gmail.com"
+==================================================================================================================================
+

@@ -1,0 +1,61 @@
+GIT BRANCH:
+A branch represents an independent line of development.
+The git branch command lets you create, list, rename, and delete branches.
+The default branch name in Git is master.
+
+To see current branch                                 :             git branch
+To add new branch                                     :             git branch branch-name
+To switch branches                                     :             git checkout branch-name
+To create and switch at a time                  :             git checkout -b branch-name
+To rename a branch                                   :             git branch -m old new
+To clone a specific branch                         :             git clone -b branch-name repo-URL
+To delete a branch                                     :             git branch -d <branch>
+To delete branch in github                        :              git push origin --delete branch_name
+
+The -d option will delete the branch only if it has already been pushed and merged with the remote branch. 
+Use -D instead if you want to force the branch to be deleted, even if it hasn't been pushed or merged yet. 
+The branch is now deleted locally.
+============================================================================================================================================
+GIT MERGE: 
+If you want to merge branch-1 with branch-2 switch to branch-1 first and give command
+COMMMAND: git merge branch-2
+
+now that command had merged the content of branch-1 to branch-2.
+Whatever the content in branch-1 will be seen in branch-2 now.
+=============================================================================================================================================
+GIT REBASE:
+if you have 2 commits in master branch and only 1 commit in devops branch, to get all the commits from master branch to devops branch 
+we can use rebase in git.  (command: git rebase branch_name)
+============================================================================================================================================
+GIT CHERRYPICK:
+if you have 5 commits in master branch and only 1 commit in devops branch, to get specific commit from master branch to devops branch 
+we can use cherry pick in git. (git cherry-pick commit_id).
+=========================================================================================================================================
+CONFLICTS:
+GIT makes merging super easy! 
+CONFLICTS generally araise when two people two people have changed the same lines in a file (or) if one developer deleted a file while another developer is working on the same file!
+In this situation git cannot determine what is correct!
+
+Lets understand in a simple way!
+
+there are two developers called siri and alexa
+
+siri created a file in master branch in a folder (file name: abc.txt, folder name: git_merge_conflict)
+siri added some data in a file (Hey siri play a song) and commited it in a master branch 
+
+alexa created a new branch called devops and overwrite the content in abc.txt (hey alexa! whats todays updates?)
+alexa commited that file in devops branch
+
+Now lets comeback to master branch and add some extra content in abc.txt file (hey siri! how are you) and commit it. 
+If you see the data in abc.txt then the data will be: (Hey siri play a song & hey siri! how are you).
+Now try to commit this file in master branch! 
+
+now you can compare the data of both the branches! (both are different)! in this situation git is not aware which one is correct. Only developers knows!
+
+so here you can observe siri and alexa is working on a same file but content is different (use command: git diff abc.txt).
+In this case if siri or alexa try to merge their file then you will get an CONFLICT ERROR from GIT!
+
+IDENTIFY CONFLICTS: see the file in master branch then you will see both the data in a single file including branch names
+RESOLVE CONFLICTS: open file in VIM EDITOR and delete all the conflict dividers and save it!
+add git to that file and commit it with the command (git commit -m "merged and resolved the conflict issue in abc.txt")
+
